@@ -29,15 +29,15 @@ resource "aws_eks_cluster" "Akbar-eks" {
     vpc_config {
       endpoint_public_access = true
       endpoint_private_access = false
-    }
+    
 
    subnet_ids =[
        aws_subnet.pub-subnet-1.id,
-       aws_subnet.pub_subnet-2.id,
+       aws_subnet.pub-subnet-2.id,
        aws_subnet.private-subnet-1.id,
        aws_subnet.private-subnet-2.id
    ]
-
+    }
    depends_on = [
      aws_iam_role_policy_attachment.amazon_eks_cluster_policy
    ]
